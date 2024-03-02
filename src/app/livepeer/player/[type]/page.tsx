@@ -12,6 +12,7 @@ export default async function PlayerPage({
       ? ({
           type: params.type,
           wallet: "0x257B2457b10C02d393458393515F51dc8880300d", // main pub
+          wallet2: "0.0.3648040", // Hedera
           title: "The video below is a long-form static asset.",
           playbackId: "be1e4f7z0yfw88wd",
         } as const)
@@ -19,6 +20,7 @@ export default async function PlayerPage({
         ? ({
             type: params.type,
             wallet: "0xab8bd0d4eda57cd9ee5a058e498a791df13dfa65", // scammer
+            wallet2: "0.0.3658040", // Hedera
             title: "Two Hot Girls One Laptop",
             playbackId: "be1e4f7z0yfw88wd",
           } as const)
@@ -26,6 +28,7 @@ export default async function PlayerPage({
         ? ({
             type: params.type,
             wallet: "0x257B2457b10C02d393458393515F51dc8880300d", // main pub
+            wallet2: "0.0.3668040", // Hedera
             title: "The video below is a short-form static asset.",
             playbackId: "cbddoks280eyu0x7",
           } as const)
@@ -39,6 +42,7 @@ export default async function PlayerPage({
             ? ({
                 type: params.type,
                 wallet: "0x257B2457b10C02d393458393515F51dc8880300d", // main pub
+                wallet2: "0.0.3678040", // Hedera
                 title: (
                   <>
                     Livestream demo
@@ -53,7 +57,8 @@ export default async function PlayerPage({
                 playbackId: params.type,
               } as const);
 
-  // get Harpie data of streamer
+
+              // get Harpie data of streamer
   async function getSummary(address) {
     const body = {
       address: address,
@@ -84,7 +89,8 @@ export default async function PlayerPage({
       <div className="flex gap-2 max-w-lg text-center flex-col">
         <span className="text-2xl font-semibold">{data.title}</span>
         <span className="text-sm text-white/90">
-          Streamer address: {data.wallet}<br />
+          Eth Address: {data.wallet}<br />
+          Hedera Account: {data.wallet2}<br />
           <hr></hr><br />
           Harpie Stats:<br />
           isMaliciousAddress: {harpie.isMaliciousAddress ? "true" : "false"}<br />
@@ -92,7 +98,9 @@ export default async function PlayerPage({
           summary: {harpie.summary}<br />
           <hr></hr><br />
           Tip creator with Hedera money:<br />
-          [insert button here]<br />
+          <button>
+    Give 10 mini HBAR
+  </button><br />
           This will send HBAR to the creator, creating an account for them if it doesn't exist already.
         </span>
       </div>
