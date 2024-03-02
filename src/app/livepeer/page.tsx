@@ -36,7 +36,7 @@ export default async function Home() {
         <h1 className="md:flex-1 flex text-3xl font-medium">Broadcast</h1>
         <Link
           className="items-center gap-2 md:flex-1 flex text-lg hover:text-white/80 text-white/90"
-          href="/broadcast"
+          href="/livepeer/broadcast"
         >
           <span>Broadcast now</span> <ArrowUpRight className="w-5 h-5" />
         </Link>
