@@ -90,6 +90,10 @@ export default async function PlayerPage({
           isMaliciousAddress: {harpie.isMaliciousAddress ? "true" : "false"}<br />
           isAssociatedWithProtocol: {harpie.isAssociatedWithProtocol ? "true" : "false"}<br />
           summary: {harpie.summary}<br />
+          <hr></hr><br />
+          Tip creator with Hedera money:<br />
+          [insert button here]<br />
+          This will send HBAR to the creator, creating an account for them if it doesn't exist already.
         </span>
       </div>
 
