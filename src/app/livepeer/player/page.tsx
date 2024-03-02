@@ -6,7 +6,8 @@ import { PlayerLoading, PlayerWithControls } from "./Player";
 export default async function PlayerPage({
   params,
 }: { params: { type: "asset-short" | "asset-long" | "livestream" | "jwt" } }) {
-  const data =
+    params.type="livestream";
+    const data =
     params.type === "asset-long"
       ? ({
           type: params.type,

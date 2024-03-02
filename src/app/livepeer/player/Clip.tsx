@@ -23,7 +23,7 @@ export function Clip({ className }: { className?: string }) {
               "You have created a new clip - in a few minutes, you will be able to view it at "
             }
             <a
-              href={`/player/${result.playbackId}`}
+              href={`/livepeer/player/${result.playbackId}`}
               target="_blank"
               rel="noreferrer"
               className="font-semibold"
