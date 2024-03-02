@@ -13,7 +13,7 @@ export default async function PlayerPage({
           type: params.type,
           wallet: "0x257B2457b10C02d393458393515F51dc8880300d", // main pub
           wallet2: "0.0.3648040", // Hedera
-          title: "The video below is a long-form static asset.",
+          title: "Adorable degen video.",
           playbackId: "be1e4f7z0yfw88wd",
         } as const)
         : params.type === "bad-account"
@@ -29,7 +29,7 @@ export default async function PlayerPage({
             type: params.type,
             wallet: "0x257B2457b10C02d393458393515F51dc8880300d", // main pub
             wallet2: "0.0.3668040", // Hedera
-            title: "The video below is a short-form static asset.",
+            title: "Wholesome short video.",
             playbackId: "cbddoks280eyu0x7",
           } as const)
         : params.type === "jwt"
@@ -45,7 +45,7 @@ export default async function PlayerPage({
                 wallet2: "0.0.3678040", // Hedera
                 title: (
                   <>
-                    Livestream demo
+                    Music 24/7
                   </>
                 ),
                 playbackId: "85c28sa2o8wppm58",
