@@ -4,17 +4,18 @@ import {cFilter} from "../../lib/cf.js";
 
 export default async function Home() {
   const ratings = [
-    [1, 1, 0, 0, 1],
     [1, 1, 0, 0, 0],
     [1, 0, 0, 0, 1],
-    [0, 0, 1, 1, 1],
+    [1, 0, 0, 0, 1],
+    [0, 0, 1, 0, 0],
     [0, 0, 1, 1, 0],
-  ];
+    [0, 0, 1, 1, 0],
+    ];
 
-  const user1=cFilter(ratings,1);
-  const user2=cFilter(ratings,2);
-  const user3=cFilter(ratings,3);
-  const user4=cFilter(ratings,4);
+  const user1=cFilter(ratings,0);
+  const user2=cFilter(ratings,1);
+  const user3=cFilter(ratings,2);
+  const user4=cFilter(ratings,3);
 
 
   return (
@@ -62,12 +63,12 @@ export default async function Home() {
       <div className="translate-y-10 flex flex-col flex-1 items-start gap-3">
         <h1 className="md:flex-1 flex text-3xl font-medium">Collaborative Filtering Recommendations Engine</h1>
 Given ratings = [
-  [1, 1, 0, 0, 1],
-  [1, 1, 0, 0, 1],
-  [1, 0, 0, 0, 1],
-  [0, 0, 1, 0, 0],
-  [0, 0, 1, 1, 0],
-  [0, 0, 1, 1, 0],
+  [1, 1, 0, 0, 0],
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [0, 0, 1, 0, 0],
+    [0, 0, 1, 1, 0],
+    [0, 0, 1, 1, 0],
 ];
           <span>Recommended Video for user 1 is {user1[0]+1}</span>
           <span>Recommended Video for user 2 is {user2[0]+1}</span>
