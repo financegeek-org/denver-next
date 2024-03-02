@@ -13,7 +13,7 @@ import {
   UnmuteIcon,
 } from "@livepeer/react/assets";
 import { getSrc } from "@livepeer/react/external";
-import { getPlaybackInfo, getPlaybackJWT } from "../livepeer";
+import { getPlaybackInfo, getPlaybackJWT } from "../../livepeer";
 import { Clip } from "./Clip";
 import { CurrentSource } from "./CurrentSource";
 import { ForceError } from "./ForceError";

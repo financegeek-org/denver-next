@@ -1,6 +1,6 @@
 "use server";
 
-import { createStreamClip } from "../livepeer";
+import { createStreamClip } from "../../livepeer";
 import { ClipPayload } from "livepeer/dist/models/components";
 import z from "zod";
 

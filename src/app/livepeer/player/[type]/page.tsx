@@ -5,18 +5,27 @@ import { PlayerLoading, PlayerWithControls } from "./Player";
 
 export default async function PlayerPage({
   params,
-}: { params: { type: "asset-short" | "asset-long" | "livestream" | "jwt" } }) {
-    params.type="livestream";
+}: { params: { type: "asset-short" | "bad-account" | "asset-long" | "livestream" | "jwt" } }) {
+    //params.type="livestream";
     const data =
     params.type === "asset-long"
       ? ({
           type: params.type,
+          wallet: "0x257B2457b10C02d393458393515F51dc8880300d", // main pub
           title: "The video below is a long-form static asset.",
           playbackId: "be1e4f7z0yfw88wd",
         } as const)
+        : params.type === "bad-account"
+        ? ({
+            type: params.type,
+            wallet: "0xab8bd0d4eda57cd9ee5a058e498a791df13dfa65", // scammer
+            title: "Two Hot Girls One Laptop",
+            playbackId: "be1e4f7z0yfw88wd",
+          } as const)
       : params.type === "asset-short"
         ? ({
             type: params.type,
+            wallet: "0x257B2457b10C02d393458393515F51dc8880300d", // main pub
             title: "The video below is a short-form static asset.",
             playbackId: "cbddoks280eyu0x7",
           } as const)
@@ -29,6 +38,7 @@ export default async function PlayerPage({
           : params.type === "livestream"
             ? ({
                 type: params.type,
+                wallet: "0x257B2457b10C02d393458393515F51dc8880300d", // main pub
                 title: (
                   <>
                     Livestream demo
@@ -60,7 +70,7 @@ export default async function PlayerPage({
   return data;
   }
 
-  const harpie=await getSummary("0x257B2457b10C02d393458393515F51dc8880300d");
+  const harpie=await getSummary(data.wallet);
  // mock data: {"name":"No Flags Detected","isMaliciousAddress":false,"isAssociatedWithProtocol":false,"summary":"This is an address without any known theft activity.","tags":{"THEFT":false,"CYBERCRIME":false,"NO_DATA":true,"SANCTIONED":false,"MIXER":false,"BOT":false,"WASH_TRADER":false,"SPEARHEAD_ATTACK":false}}
 
   return (
@@ -72,17 +82,15 @@ export default async function PlayerPage({
         <ArrowLeft className="w-4 h-4" /> Go back
       </Link>
       <div className="flex gap-2 max-w-lg text-center flex-col">
-        <span className="text-2xl font-semibold">Streamer Name - Two Girls One Laptop</span>
+        <span className="text-2xl font-semibold">{data.title}</span>
         <span className="text-sm text-white/90">
-          Streamer address: 0x257B2457b10C02d393458393515F51dc8880300d<br />
+          Streamer address: {data.wallet}<br />
           <hr></hr><br />
           Harpie Stats:<br />
           isMaliciousAddress: {harpie.isMaliciousAddress ? "true" : "false"}<br />
           isAssociatedWithProtocol: {harpie.isAssociatedWithProtocol ? "true" : "false"}<br />
           summary: {harpie.summary}<br />
         </span>
-
-        <span className="text-sm text-white/90">{data.title}</span>
       </div>
 
       <span className="h-px w-full max-w-md bg-gradient-to-r from-white/5 via-white/60 to-white/5" />

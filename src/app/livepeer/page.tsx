@@ -17,16 +17,9 @@ export default async function Home() {
           </Link>
           <Link
             className="items-center justify-center md:justify-end gap-2 flex-1 flex text-lg hover:text-white/80 text-white/90"
-            href="/livepeer/player/asset-short"
+            href="/livepeer/player/bad-account"
           >
-            <span>Play a short video</span>
-            <ArrowUpRight className="w-5 h-5" />
-          </Link>
-          <Link
-            className="items-center justify-center md:justify-end gap-2 flex-1 flex text-lg hover:text-white/80 text-white/90"
-            href="/livepeer/player/asset-long"
-          >
-            <span>Play a long video</span>
+            <span>Play a scam video</span>
             <ArrowUpRight className="w-5 h-5" />
           </Link>
           <Link
